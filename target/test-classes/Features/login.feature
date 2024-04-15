@@ -1,22 +1,15 @@
 @loginTests
 Feature: feature to test login functionality
 
-  Scenario: Check login is successful with valid credentials
+  Scenario Outline: Check login is successful with valid credentials
 
-    Given user is on login page
-    When user enters username and password
+    Given user already browser open
+    And user is on login page
+    When user enters <username> and <password>
     And clicks on login button
     Then user is navigated to homepage
 
-#  @LoginScenario
-#  Scenario Outline: Check login is successful with valid credentials
-#
-#    Given user is on login page
-#    When user enters <username> and <password>
-#    And clicks on login button
-#    Then user is navigated to homepage
-#
-#    Examples:
-#    | username | password |
-#    | user1    | pass1    |
-#    | user2    | pass2    |
+    Examples:
+    | username | password |
+    | standard_user    | secret_sauce    |
+    | user2    | pass2    |

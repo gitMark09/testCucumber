@@ -10,6 +10,11 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/HTMLReports/reports.html",
                 "json:target/JSONReports/reports.json",
                 "junit:target/JUnitReports/reports.xml"},
-        tags = "@loginTests")
+        tags = "@loginTests"
+        //tags = {@loginSteps or @Tag2}
+        //tags = {@loginSteps and @Tag2}
+        //tags = {(@loginSteps or @Tag2) and Tag1}
+        //tags = {@Tag1 and not @Tag2}
+)
 public class FeatureRunner {
 }
