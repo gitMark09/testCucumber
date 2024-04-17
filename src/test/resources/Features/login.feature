@@ -18,15 +18,15 @@ Feature: feature to test login functionality
     | standard_user    | secret_sauce    |
     | user2    | pass2    |
 
-    @Tag1
-    Scenario: Tags Sample 1
-      Given
-      When
-      Then
+  @Tag1
+  Scenario: Tags Sample1
+    Given user sample1 given
+    When user sample1 when
+    Then user sample1 then
 
-    @Tag2
-    Scenario: Tags Sample 2
-    Given
-    When
-    Then
+  @Tag2
+  Scenario: Tags Sample 2
+  Given
+  When
+  Then
 

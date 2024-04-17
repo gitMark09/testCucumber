@@ -1,6 +1,9 @@
 package GlueCodes;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,15 +26,6 @@ public class LoginSteps {
     LoginPage lp;
     HomePage hp;
 
-
-    @Before
-    public void browserSetup(){
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\webdrivers\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-
-        wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-    }
 
     @Given("user already browser open")
     public void user_already_browser_open() {
@@ -71,6 +65,23 @@ public class LoginSteps {
         hp = new HomePage(driver);
         Assert.assertTrue(hp.menuProductsExists());
 
+    }
+
+
+
+    //    SAMPLE 1
+
+    @Given("user sample1 given")
+    public void user_sample1_given() {
+        System.out.println(" This is inside given sample 1");
+    }
+    @When("user sample1 when")
+    public void user_sample1_when() {
+        System.out.println("This is inside when sample 1");
+    }
+    @Then("user sample1 then")
+    public void user_sample1_then() {
+        System.out.println("This is inside then sample 1");
     }
 
 

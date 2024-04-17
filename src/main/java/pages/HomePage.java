@@ -25,5 +25,22 @@ public class HomePage {
         return false;
     }
 
+    public void click_BurgerIconBtn(){
+        btn_BurigerIcon.click();
+    }
+
+    public void click_LogoutNBtn(){
+        btn_Logout.click();
+    }
+
     String mnuProducts = "//span[text()='Products']";
+
+    @FindBy (xpath = "//button[text()='Open Menu']")
+    public WebElement btn_BurigerIcon;
+
+    @FindBy (id = "logout_sidebar_link")
+    public WebElement btn_Logout;
+
+    public String inventoryItem = "//div[@class='inventory_item_name ' and text()='"+"{0}"+"']";
+
 }
