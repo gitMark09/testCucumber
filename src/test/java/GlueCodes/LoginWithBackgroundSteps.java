@@ -1,7 +1,9 @@
 package GlueCodes;
 
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.*;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -46,12 +48,21 @@ public class LoginWithBackgroundSteps {
 
     }
 
-    @Then("user is taken to the homepade")
-    public void user_is_taken_to_the_homepade() {
+    @Then("user is taken to the homepage")
+    public void user_is_taken_to_the_homepage() {
         hp = new HomePage(driver);
         wait.until(ExpectedConditions.visibilityOf(hp.btn_BurigerIcon));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    // <<<<<<<< HOOKS
+    @After(value = "@HomepageTests")
+    public void teardown(){
+        System.out.println("This is inside @After HOOK");
+        driver.close();
+        driver.quit();
+    }
+    //>>>>>>>>>> HOOKS
 
 
 
@@ -74,7 +85,7 @@ public class LoginWithBackgroundSteps {
 
     @Then("^item (.*) is in inventory$")
     public void item_itemName_is_in_inventory(String itemName) {
-        driver.findElement(By.xpath(hp.inventoryItem.replace("{0}", itemName)));
+        Ensure.that(driver.findElement(By.xpath(hp.inventoryItem.replace("{0}", itemName))).isDisplayed()).isTrue();
 
     }
 

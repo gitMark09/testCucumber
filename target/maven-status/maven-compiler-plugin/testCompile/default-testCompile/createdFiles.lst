@@ -2,5 +2,4 @@ GlueCodes\GoogleSearchSteps.class
 GlueCodes\LoginWithBackgroundSteps.class
 GlueCodes\LoginSteps.class
 FeatureRunner.class
-GlueCodes\Hooks.class
 TestRunner.class

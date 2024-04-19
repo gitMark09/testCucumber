@@ -1,10 +1,11 @@
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)
+@RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        //features="src/test/resources/Features/loginWithBackground.feature",
+        features="src/test/resources/Features/loginWithBackground.feature",
         glue={"GlueCodes"},
         //monochrome = true,
         plugin = {"pretty", "html:target/HTMLReports/reports.html",

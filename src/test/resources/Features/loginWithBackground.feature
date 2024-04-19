@@ -4,7 +4,7 @@ Feature: Feature to test logout link and inventory item displayed with COMMON ST
   Background: user has browser open
     Given user is on login webpage
     When valid username and password is entered by user
-    Then user is taken to the homepade
+    Then user is taken to the homepage
 
 
   Scenario: check valid login credentials
@@ -19,3 +19,4 @@ Feature: Feature to test logout link and inventory item displayed with COMMON ST
       |itemName|
       |Sauce Labs Backpack|
       |Ube                |
+
